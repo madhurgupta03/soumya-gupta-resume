@@ -1,0 +1,168 @@
+%% ============================================================
+%% ATS-Optimised Resume — Soumya Gupta | Data Analyst
+%% Version   : 11.0  (Feb 2026)
+%% Technique : Google XYZ  |  Compiler: pdflatex  |  1 page
+%%
+%% v11.0 ATS improvements:
+%%   [x] Headline sharpened with keyword pipeline
+%%   [x] Summary rewritten: Data Analysis, Data Visualization,
+%%        Dashboard Development, Business Intelligence, Stakeholder Mgmt
+%%   [x] Core Competencies row added (ATS keyword dense section)
+%%   [x] ERP & Testing + BA Methodology merged → ERP & BA (8 rows total)
+%%   [x] AI tools consolidated — removed buzzword bloat
+%%   [x] UPSC rewritten for ATS value (research, statistical, policy)
+%%   [x] Impact language added to key bullets
+%% ============================================================
+\documentclass[10pt, letterpaper]{article}
+
+%% ── Packages ─────────────────────────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled=0.88]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[margin=0.48in, top=0.38in, bottom=0.32in]{geometry}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+
+%% ── Colours ──────────────────────────────────────────────────
+\definecolor{accent}{RGB}{22, 74, 114}
+\definecolor{muted}{RGB}{80, 80, 80}
+
+%% ── Hyperref ─────────────────────────────────────────────────
+\hypersetup{
+    hidelinks,
+    pdfauthor   = {Soumya Gupta},
+    pdftitle    = {Soumya Gupta - Data Analyst Resume 2026},
+    pdfkeywords = {Data Analyst, Business Analyst, Risk Analyst,
+                   Trust and Safety, Fraud Detection, Fraud Analytics,
+                   Risk Analytics, Anomaly Detection, Behavioral Analysis,
+                   Pattern Recognition, Risk Mitigation, Outlier Detection,
+                   Data Analysis, Data Visualization, Dashboard Development,
+                   Business Intelligence, Stakeholder Management,
+                   Data Cleaning, Data Reporting, Data Extraction,
+                   Data Transformation, Forecasting, MIS Reporting,
+                   SQL, MySQL, HQL, Hive, OData, Power BI, DAX,
+                   SAP Analytics Cloud, SAC, Tableau, Python,
+                   JIRA, Agile, BRD, FRD, ETL, Data Pipeline,
+                   Data Modelling, Data Quality, Data Governance,
+                   Data Lineage, SAP S4HANA, SAP Datasphere,
+                   UAT, Gap Analysis, Root Cause Analysis,
+                   Variance Analysis, KPI Design, KPI Tracking,
+                   S&OP, Demand Planning, Supply Chain, Finance, FMCG,
+                   GitHub Copilot, ChatGPT, Prompt Engineering,
+                   Generative AI}
+}
+
+%% ── Section headings ─────────────────────────────────────────
+\titleformat{\section}
+  {\normalsize\bfseries\color{accent}\raggedright}
+  {}{0em}{\MakeUppercase}
+  [\vspace{-5pt}\textcolor{accent}{\rule{\linewidth}{0.5pt}}]
+\titlespacing*{\section}{0pt}{7pt}{2pt}
+
+%% ── List settings ────────────────────────────────────────────
+\setlist[itemize]{
+    leftmargin = 1.2em,
+    topsep     = 0pt,
+    itemsep    = 1pt,
+    parsep     = 0pt,
+    partopsep  = 0pt,
+    label      = \small\textbullet
+}
+
+%% ── Global spacing ───────────────────────────────────────────
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\raggedright
+
+%% ── Commands ─────────────────────────────────────────────────
+\newcommand{\role}[3]{%
+  \vspace{2pt}%
+  {\bfseries #1}\hfill{\small\color{muted}\textit{#3}}\\[-2pt]%
+  {\small\color{muted}\textit{#2}}%
+}
+\newcommand{\skillrow}[2]{%
+  \noindent{\small\bfseries #1:}\enspace{\small #2}\\[1pt]%
+}
+
+%% ============================================================
+\begin{document}
+%% ============================================================
+
+%% ── HEADER ───────────────────────────────────────────────────
+\begin{center}
+  {\LARGE\bfseries SOUMYA GUPTA}\\[2pt]
+  {\small\color{muted}Data Analyst \textbar{} Risk \& Business Analytics \textbar{} Fraud Detection \textbar{} SQL \textbar{} Python \textbar{} Power BI \textbar{} Tableau}\\[3pt]
+  {\small
+  \href{tel:+917674981551}{+91-76749-81551}\enspace\textbullet\enspace
+  \href{mailto:soumya1698@gmail.com}{soumya1698@gmail.com}\enspace\textbullet\enspace
+  Mumbai, Maharashtra\enspace\textbullet\enspace
+  \href{https://linkedin.com/in/soumya-gupta1698}{linkedin.com/in/soumya-gupta1698}}
+\end{center}
+
+\vspace{-2pt}
+
+%% ── PROFESSIONAL SUMMARY ─────────────────────────────────────
+\section{Professional Summary}
+
+Results-driven Data Analyst with \textbf{almost 2 years of professional experience} across SQL, Python, and BI platforms — detecting fraud patterns and anomalies, building measurement frameworks, and translating data into actionable business decisions. Proficient in SQL (CTEs, Window Functions), Python (Pandas, NumPy), Power BI (DAX), Tableau, SAP Analytics Cloud, and Excel / Google Sheets. Delivered fraud-pattern detection pipelines, automated alerting dashboards, ETL-based data integrity frameworks, and cross-functional KPI systems — enabling a \textbf{30\% efficiency gain}, \textbf{40\% data quality improvement}, and \textbf{12+ hrs/week} reporting savings.
+
+%% ── TECHNICAL SKILLS ─────────────────────────────────────────
+\section{Technical Skills}
+
+\skillrow{Core Competencies}{Data Analysis, Data Visualization, Dashboard Development, Business Intelligence, Fraud Detection, Trust \& Safety, Risk Analytics, Anomaly Detection, Pattern Recognition, Measurement Framework, KPI Tracking, Stakeholder Management, Data Reporting}
+\skillrow{BI, SQL \& Data}{SAP Analytics Cloud (SAC), Power BI (DAX, Power Query), Tableau, Looker, KPI Design, SQL (CTEs, Window Functions, Joins), MySQL, HQL / Hive (working knowledge), SAP Datasphere, Excel (Pivot, XLOOKUP, Power Query, Macros), Google Sheets, OData, MIS Reporting}
+\skillrow{Data Engineering \& Warehousing}{ETL, Data Pipelines, Data Warehousing, Star Schema / Snowflake Schema, Fact \& Dimension Tables, Data Modelling, Data Quality Management, Data Governance, Data Lineage, Data Validation}
+\skillrow{Analytics, AI \& Programming}{Python (Pandas, NumPy, Matplotlib, Seaborn), EDA, Statistical Analysis, Outlier Detection, Behavioral Pattern Analysis, Conversion Analytics, Funnel Analysis, Variance Analysis, Descriptive \& Diagnostic Analytics \textbar{} ChatGPT/Claude, GitHub Copilot, Generative AI}
+\skillrow{ERP, BA \& Domain}{SAP S/4HANA (MM \& SD), Z-code Testing, UAT \textbar{} BRD, FRD, User Stories, Gap Analysis, Root Cause Analysis, Risk Mitigation, Agile, Scrum, SDLC \textbar{} Supply Chain (S\&OP, Demand Planning), Logistics, Finance (P\&L, Variance Analysis), FMCG \textbar{} JIRA, Confluence, MS Teams, Lucidchart}
+
+%% ── PROFESSIONAL EXPERIENCE ──────────────────────────────────
+\section{Professional Experience}
+
+\role{Sr. Executive — Data Analyst \& Business Analyst}{Leap India Limited, Mumbai, Maharashtra}{Nov 2024 – Present}
+
+\begin{itemize}
+  \item \textbf{Promoted} from Management Trainee to Sr. Executive within \textbf{6 months} of joining, recognised for consistent delivery of data-driven insights across Supply Chain and Finance functions.
+  \item Boosted operational efficiency by \textbf{30\%} by designing end-to-end measurement frameworks and KPI monitoring systems with automated threshold-based alerts in SAP Analytics Cloud and Excel — enabling real-time fraud/abuse signal detection and leadership decision-making.
+  \item Identified irregular behavioral patterns and anomalies across operational datasets using SQL window functions and Python EDA — supporting fraud-hypothesis testing, root-cause analysis, and cross-functional risk mitigation.
+  \item Eliminated \textbf{12+ hours/week} of manual reporting by building automated SAC and Tableau dashboards with proactive alerting, drill-down filters, and daily/weekly/monthly KPI views — enabling preemptive business actions and replacing ad-hoc workflows.
+  \item Engineered OData-to-MySQL data ingestion workflows from SAP Datasphere — applied dimensional modelling and indexing to cut Power BI report refresh time and improve query performance at scale.
+  \item Published conclusive business intelligence across Tableau and Power BI, integrating MySQL data marts — enabling Business, Product, and Data Engineering teams to track conversion metrics, business health KPIs, and self-serve on demand.
+  \item Improved data quality by \textbf{40\%} by building an ETL-based cleaning pipeline on \textbf{20,000+ rows} using SQL and Excel Power Query — applied outlier detection, data integrity checks, and instrumentation quality feedback loops with Data Engineering to surface and remediate anomalous records at source.
+  \item Accelerated analytical delivery by embedding AI-native tools (\textbf{ChatGPT / Claude}, \textbf{GitHub Copilot / Cursor}) for SQL drafting, DAX generation \& root-cause decomposition — cutting cycle time by \textbf{\textasciitilde20\%}.
+\end{itemize}
+
+\vspace{1pt}
+
+\role{Data Analytics Research Contributor}{Collaborative Research Project, Delhi}{Aug 2020 – Aug 2021}
+
+\begin{itemize}
+  \item Built an end-to-end ML data pipeline for lung disease detection — performed data extraction, cleaning, and transformation on \textbf{10,000+ chest X-ray records} (Pandas, NumPy, scikit-learn), and co-designed a COVID-19 public health survey data framework with PhD researchers.
+\end{itemize}
+
+%% ── EDUCATION ────────────────────────────────────────────────
+\section{Education}
+
+{\bfseries UPSC Civil Services Exam — Research \& Analytical Study}\hfill{\small\color{muted}\textit{Nov 2021 – Aug 2024}}\\
+{\small\color{muted}Developed policy data analysis, statistical interpretation, research synthesis, and structured analytical writing across Economics, Statistics, and Public Policy.}
+
+\vspace{2pt}
+{\bfseries Bachelor of Technology (B.Tech)}\hfill{\small\color{muted}\textit{2016 – 2020}}\\
+{\small\color{muted}Gandhi Institute of Technology and Management (GITAM), Visakhapatnam\hfill CGPA: 7.4 / 10.0}
+
+%% ── CERTIFICATIONS & TRAINING ────────────────────────────────
+\section{Certifications \& Training}
+
+{\bfseries SAP Datasphere BDC — Comprehensive Training} — Udemy\hfill{\small\color{muted}\textit{Feb 2026 – Present \emph{(In Progress)}}}
+
+\vspace{1pt}
+{\bfseries Data Analytics \& Data Science Program} — Coding Ninjas\hfill{\small\color{muted}\textit{Sep 2024 – Sep 2025}}
+
+\vspace{1pt}
+{\bfseries Red Hat Certified System Administrator (RHCSA)} — Red Hat\hfill{\small\color{muted}\textit{Jun 2018}}
+
+%% ============================================================
+\end{document}
