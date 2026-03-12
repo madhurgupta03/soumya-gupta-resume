@@ -52,8 +52,9 @@ if [[ ! -f "${SOURCE_DIR}/resume.tex" ]]; then
 fi
 
 ROLE="${2:-${PROFILE}}"
+DATESTAMP="$(date '+%Y%m%d')"
 TIMESTAMP="$(date '+%Y%m%d_%H%M%S')"
-OUTPUT_DIR="${ROOT_DIR}/output/${PROFILE}/${TIMESTAMP}"
+OUTPUT_DIR="${ROOT_DIR}/output/${PROFILE}/${DATESTAMP}"
 OUTPUT_FILE="SoumyaGupta_${ROLE}_${TIMESTAMP}.pdf"
 
 # ── Header ────────────────────────────────────────────
@@ -61,8 +62,9 @@ echo "============================================"
 echo "  Resume LaTeX Compiler"
 echo "  Profile   : ${PROFILE}"
 echo "  Role      : ${ROLE}"
-echo "  Timestamp : ${TIMESTAMP}"
-  echo "  Output    : output/${PROFILE}/${TIMESTAMP}/${OUTPUT_FILE}"
+echo "  Date      : ${DATESTAMP}"
+  echo "  Output    : output/${PROFILE}/${DATESTAMP}/${OUTPUT_FILE}"
+  echo "  Timestamp : ${TIMESTAMP}"
 echo "============================================"
 echo ""
 
@@ -70,7 +72,7 @@ mkdir -p "$OUTPUT_DIR"
 
 # ── Step 1: Build Docker image ────────────────────────
 echo "[1/3] Building Docker image '${IMAGE_NAME}'..."
-docker build --tag "${IMAGE_NAME}" "${SOURCE_DIR}"
+docker build --tag "${IMAGE_NAME}" "${ROOT_DIR}"
 echo "      Image built successfully."
 echo ""
 
@@ -95,7 +97,7 @@ if [ -f "${SOURCE_DIR}/resume.pdf" ]; then
     echo ""
     echo "============================================"
     echo "  Done!"
-    echo "  PDF saved to: output/${PROFILE}/${TIMESTAMP}/${OUTPUT_FILE}"
+    echo "  PDF saved to: output/${PROFILE}/${DATESTAMP}/${OUTPUT_FILE}"
     echo "============================================"
 else
     echo "ERROR: resume.pdf not found after compilation."

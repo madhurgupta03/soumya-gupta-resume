@@ -40,20 +40,18 @@ resume/
 │
 ├── Makefile                    ← all commands (start here)
 ├── compile.sh                  ← build engine (called by Makefile)
+├── Dockerfile                  ← single shared LaTeX compiler image
 ├── README.md                   ← this file
 ├── IMPROVEMENT_GUIDE.md        ← skill gap analysis and action plan
 │
 ├── base-data-analyst/          ← base profile: Data Analyst
-│   ├── resume.tex              ← canonical source — edit this
-│   └── Dockerfile              ← LaTeX compiler image definition
+│   └── resume.tex              ← canonical source — edit this
 │
 ├── base-data-engineer/         ← base profile: Data Engineer
-│   ├── resume.tex
-│   └── Dockerfile
+│   └── resume.tex
 │
 ├── company-swiggy/             ← JD-tailored: Swiggy (T&S + Analytics roles)
-│   ├── resume.tex              ← derived from base-data-analyst, JD-optimised
-│   └── Dockerfile
+│   └── resume.tex              ← derived from base-data-analyst, JD-optimised
 │
 └── output/                     ← all compiled PDFs (gitignored)
     ├── base-data-analyst/
@@ -221,7 +219,7 @@ Read the JD carefully and note:
 **Step 2 — Create a company folder**
 
 ```bash
-cp base-data-analyst/Dockerfile  company-<name>/Dockerfile
+mkdir company-<name>
 cp base-data-analyst/resume.tex  company-<name>/resume.tex
 ```
 
@@ -307,7 +305,9 @@ cp base-data-analyst/resume.tex company-<name>/resume.tex
 | `make <profile>` | Compile a profile (profile name used as role label) |
 | `make <profile> ROLE="Label"` | Compile with a custom role label in the filename |
 | `make all` | Compile every profile sequentially |
+| `make build` | Build (or rebuild) the shared Docker image |
 | `make clean` | Delete all PDFs under `output/` |
+| `make clean-image` | Remove the `resume-builder` Docker image |
 
 ### Output filename format
 
@@ -333,15 +333,7 @@ Use this when creating a resume for a **new role type** (e.g., Data Scientist, P
 mkdir base-data-scientist
 ```
 
-### Step 2 — Copy the Dockerfile
-
-The Dockerfile is identical for all profiles:
-
-```bash
-cp base-data-analyst/Dockerfile base-data-scientist/Dockerfile
-```
-
-### Step 3 — Create the resume
+### Step 2 — Create the resume
 
 ```bash
 cp base-data-analyst/resume.tex base-data-scientist/resume.tex
@@ -355,14 +347,14 @@ Key things to update:
 - Skills rows (add/remove tools relevant to the new profile)
 - Experience bullets (reframe for new role angle)
 
-### Step 4 — Compile
+### Step 3 — Compile
 
 ```bash
 make base-data-scientist
 make base-data-scientist ROLE="DataScientist_v1"
 ```
 
-No changes to `Makefile` or `compile.sh` needed — new folders are auto-discovered.
+No changes to `Makefile`, `compile.sh`, or `Dockerfile` needed — new folders are auto-discovered and share the root `Dockerfile`.
 
 ---
 
@@ -379,7 +371,6 @@ mkdir company-zepto
 ### Step 2 — Copy from the relevant base
 
 ```bash
-cp base-data-analyst/Dockerfile  company-zepto/Dockerfile
 cp base-data-analyst/resume.tex  company-zepto/resume.tex
 ```
 
@@ -414,7 +405,7 @@ bash compile.sh
 ### What it does (6 steps)
 
 1. **Validates** — checks the profile folder exists and contains `resume.tex`
-2. **Builds** — creates a Docker image tagged `resume-builder` from the profile's `Dockerfile`
+2. **Builds** — creates a Docker image tagged `resume-builder` from the root `Dockerfile`
 3. **Mounts** — runs the container with the profile folder mounted at `/workspace`
 4. **Compiles** — runs `pdflatex` twice (pass 1 builds aux files; pass 2 resolves all references)
 5. **Saves** — copies `resume.pdf` → `output/<profile>/SoumyaGupta_<role>_<timestamp>.pdf`
@@ -424,7 +415,7 @@ bash compile.sh
 
 ## Dockerfile Reference
 
-Every profile folder needs a `Dockerfile`. All profiles use the same content — just copy it:
+There is a single `Dockerfile` at the project root, shared by all profiles. No per-profile copy is needed.
 
 ```dockerfile
 FROM texlive/texlive:latest
@@ -440,6 +431,14 @@ CMD ["bash", "-c", \
 
 > Docker caches image layers — the first build per machine is slow (~2–3 min to pull TeX Live). All subsequent builds are fast (~5 sec) unless the Dockerfile changes.
 
+To rebuild the image manually (e.g. after editing the Dockerfile):
+
+```bash
+make build
+# or to also remove the old image first:
+make clean-image && make build
+```
+
 ---
 
 ## .gitignore Notes
@@ -451,7 +450,7 @@ CMD ["bash", "-c", \
 | `temp/` | Working scratch folder |
 | `.DS_Store`, `Thumbs.db` | OS metadata |
 
-Only `.tex`, `Dockerfile`, `compile.sh`, `Makefile`, and `*.md` files are committed.
+Only `.tex`, root `Dockerfile`, `compile.sh`, `Makefile`, and `*.md` files are committed.
 
 ---
 
@@ -462,13 +461,13 @@ Starting from scratch for a new application?
 │
 ├── New role type (e.g., Data Scientist)?
 │     └── mkdir base-data-scientist/
-│           cp base-data-analyst/{Dockerfile,resume.tex} base-data-scientist/
+│           cp base-data-analyst/resume.tex base-data-scientist/
 │           # edit resume.tex for new profile
 │           make base-data-scientist
 │
 └── Same role, new company JD?
       └── mkdir company-<name>/
-            cp base-data-analyst/{Dockerfile,resume.tex} company-<name>/
+            cp base-data-analyst/resume.tex company-<name>/
             # tailor resume.tex to JD (summary → skills → bullets)
             make company-<name> ROLE="JobTitle"
             # check page count in PDF (must be 1 page)
