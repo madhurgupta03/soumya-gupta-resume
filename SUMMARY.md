@@ -7,8 +7,15 @@
 > **Variants**
 > | Role | Code folder | Latest output |
 > |---|---|---|
-> | Data / Business Analyst | `code/` | `output/SoumyaGupta_Data_Business_Analyst_*.pdf` |
-> | Data Engineer | `code-data-engineer/` | `output/SoumyaGupta_Data_Engineer_*.pdf` |
+> | Data / Business Analyst | `base-data-analyst/` | `output/base-data-analyst/` |
+> | Data Engineer | `base-data-engineer/` | `output/base-data-engineer/` |
+> | Swiggy — Analyst, Trust & Safety | `company-swiggy/` | `output/company-swiggy/` |
+> | Honeywell | `company-honeywell/` | `output/company-honeywell/` |
+> | NetApp | `company-netapp/` | `output/company-netapp/` |
+> | Norstella — Analyst I, Classifications | `company-norstella/` | `output/company-norstella/` |
+> | PwC — Data Analyst | `company-pwc/` | `output/company-pwc/` |
+> | Inchcape — Data Executive, World of Ports | `company-inchcape/` | `output/company-inchcape/` |
+| **PwC — Data Engineer, MS Fabric/PySpark/SQL Associate 2** | **`company-pwc/`** | **`output/company-pwc/`** |
 
 ---
 
@@ -34,6 +41,10 @@
 | v11.1 | Feb 27 2026 | All skills redistributed into 5 buckets without removal: Looker, KPI Design, Macros, Data Validation, Descriptive Analytics, Generative AI, Root Cause Analysis, SDLC, User Stories, Demand Planning, Logistics, Lucidchart, Confluence, Data Storytelling reinstated |
 | v11.2 | Feb 27 2026 | AI bullet: Claude + Cursor added explicitly, ~20% cycle time metric, root-cause decomposition |
 | **DE-v1.0** | **Feb 27 2026** | **NEW — Data Engineer variant** (`code-data-engineer/`): full experience reframed through ETL/pipeline lens; 5 DE-specific skill clusters; OData→MySQL ingestion, Star Schema modelling, ETL validation pipeline, MySQL data mart design as core DE achievements |
+| **Norstella-v1.0** | **Apr 21 2026** | **NEW — Norstella Analyst I, Classifications** (`company-norstella/`): headline→Research & Data Classification Analyst; summary reframed for data classification, validation, secondary research, SOP adherence, Microsoft Office; 4 skill clusters (Core Competencies, MS Office & BI, SQL/Data/Programming, Research & Domain) with pharma/life-sciences keywords; 8 experience bullets rewritten for review/classify/validate language + mentoring + cross-functional collaboration; research role elevated as life-sciences classification project |
+| **Norstella-v1.1** | **Apr 21 2026** | ATS fix: "almost 2 years" → "over 2 years" (combined analytical experience); added JD phrases "data assets" and "classification standards" to cross-functional bullet; ATS score 91/100 |
+| **Inchcape-v3.0** | **Apr 21 2026** | **UPDATED — Inchcape Data Executive, World of Ports** (`company-inchcape/`): trimmed from 2→1 page; removed OData pipeline bullet (too engineering-focused); tightened summary, skill rows, and 7 experience bullets; retained all JD-critical phrases (source documents, allotted time limits, tracking sheets, point of contact, VBA Macros, data accuracy & consistency) |
+| **PwC-v2.0** | **Apr 21 2026** | **UPDATED — PwC Data Engineer, MS Fabric/PySpark/SQL Associate 2** (`company-pwc/`): fixed "almost 2 years" → "over 2 years"; added JD-exact phrases "data solutions", "data infrastructure", "data extraction", "data requirements", "project architecture documentation"; added Data Management, Big Data Frameworks, Documentation to skill rows; Coding Ninjas modules expanded with Apache Spark / PySpark + Big Data; ATS score 90/100 |
 
 ---
 
