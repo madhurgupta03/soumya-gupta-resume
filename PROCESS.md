@@ -4,6 +4,20 @@ Step-by-step instructions for creating a tailored resume for any new job applica
 
 ---
 
+## Mission
+
+Make the resume hard to reject. The resume must clear two gates and survive a third:
+
+1. The company ATS keyword screen. Mirror exact JD language and cover 100% of Tier 1 keywords.
+2. The recruiter 6-second scan. Role, experience level, and top 2-3 bold metrics must be obvious in the top third.
+3. AI-content detection. Workday, Greenhouse, and Lever run AI-content classifiers, and ~49% of hiring managers auto-dismiss resumes that read like ChatGPT. The final language must sound like a real person.
+
+Methods: Google XYZ on every bullet ("Accomplished [X] as measured by [Y], by doing [Z]"), the 6-second rule for layout, and AI-resume best practices (AI tailors, never invents; every number defensible in one sentence).
+
+Voice is a required step. Before compiling, run the resume text through the humanizer skill (`.cursor/skills/humanizer/SKILL.md`), then the writing-style skill (`.cursor/skills/writing-style/SKILL.md`). Remove every em dash and AI filler word.
+
+---
+
 ## Prerequisites
 
 - Docker Desktop must be running on your machine.
@@ -139,6 +153,16 @@ If the UPSC or other non-traditional education section can be reframed to show J
 - Keep every bullet to 1-2 compiled lines maximum.
 - Bold all quantified metrics with \textbf{}.
 - Never use "Responsible for", "Helped", or "Worked on" — use strong action verbs.
+- Vary bullet structure. Identical openings on every bullet read as AI-generated.
+
+### 4i. Voice Pass (required before compiling)
+
+Run the full resume text through two skills, in order:
+
+1. `.cursor/skills/humanizer/SKILL.md` — strip AI-writing tells.
+2. `.cursor/skills/writing-style/SKILL.md` — spartan, direct, no em dashes, no filler words.
+
+Remove on sight: em dashes, "however / moreover / furthermore", AI verbs like "spearheaded / leveraged / synergy / delve", and opener clichés like "results-driven / seasoned". Replace fake-precise numbers (e.g. "37.2%") with clean, defensible figures.
 
 ---
 
@@ -310,6 +334,10 @@ make clean-image                      Remove the Docker image
 - [ ] 6-second scan test: role, experience, and top achievements visible immediately.
 - [ ] Copy-paste test: PDF text pastes in logical order.
 - [ ] All metrics are defensible (can explain in 1-2 sentences).
+- [ ] Voice pass done: humanizer + writing-style applied.
+- [ ] No em dashes anywhere in the resume.
+- [ ] No AI filler words (however, spearheaded, leveraged, results-driven, etc.).
+- [ ] Bullet structure varies; not every bullet opens the same way.
 - [ ] Spell check and grammar check are done.
 - [ ] PDF is compiled and saved with a timestamped filename.
 - [ ] SUMMARY.md updated with changelog entry.

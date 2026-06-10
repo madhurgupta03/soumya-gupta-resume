@@ -197,6 +197,48 @@ competitive advantage in 2026.
 
 ---
 
+## AI-Content Detection — The Third Gate (2026)
+
+> Sourced from: theinterviewguys.com, theaicareerlab.com, huntr.co, careerenlightenment.com — Updated June 2026
+
+A resume now passes three gates, not two: the ATS keyword screen, the recruiter 6-second scan,
+and AI-content detection.
+
+- Workday, Greenhouse, and Lever shipped AI-content classifiers in late 2025. A flagged resume
+  is rarely auto-rejected outright, but it gets routed to a lower-priority queue.
+- **80%** of hiring managers say they can spot AI-generated content, and **49%** auto-dismiss
+  resumes they suspect were written by AI (2026 hiring research).
+- Detectors are calibrated against a small set of tics. Em dashes and overuse of "however"
+  are two of the strongest signals.
+
+### How to use AI without getting flagged
+
+- AI tailors and sharpens. AI never invents. Bring your real facts, numbers, and stories.
+- Let AI do ~70% (structure, first phrasing, keyword surfacing). Rewrite ~30% in your own voice.
+- Never paste optimizer output verbatim. That exact text is what the detector flags.
+- Read every line out loud. If you would not say it in an interview, rewrite it.
+- Verify every number. If you cannot defend it in one sentence with context, cut it.
+
+### AI-tell red flags — remove on sight
+
+| Red flag | Fix |
+|----------|-----|
+| Em dashes (—) | Use commas or periods |
+| "however", "moreover", "furthermore" | Cut or use a period |
+| "spearheaded", "leveraged", "synergy", "delve", "showcasing" | Specific action verbs: built, reduced, closed, trained, launched |
+| Openers like "results-driven", "seasoned", "passionate professional" | Lead with role, scope, or a metric |
+| Oddly precise fake numbers like "37.2%" | Use clean, defensible figures |
+| Every bullet in the identical structure | Vary openings and XYZ order |
+
+### Voice workflow for this repo
+
+Before compiling any resume, run the text through two skills, in order:
+
+1. `.cursor/skills/humanizer/SKILL.md` — strip AI-writing tells.
+2. `.cursor/skills/writing-style/SKILL.md` — spartan, direct, no em dashes, no filler.
+
+---
+
 ## Bullet Point Quality — The XYZ and CAR Formulas
 
 ### XYZ Formula (Google format)

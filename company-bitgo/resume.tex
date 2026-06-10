@@ -1,0 +1,155 @@
+%% ============================================================
+%% ATS-Optimised Resume — Soumya Gupta | SOC Analyst (BitGo)
+%% Version   : 2.0  (May 2026)
+%% Technique : Google XYZ  |  Compiler: pdflatex  |  1 page
+%%
+%% v2.0: Expanded RHCSA security skills (firewall, SELinux, log mgmt),
+%%        stronger detection/triage/escalation framing, UPSC internal
+%%        security angle, reframed all bullets for SOC relevance
+%% ============================================================
+\documentclass[10pt, letterpaper]{article}
+
+%% ── Packages ─────────────────────────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled=0.88]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[margin=0.48in, top=0.38in, bottom=0.32in]{geometry}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+
+%% ── Colours ──────────────────────────────────────────────────
+\definecolor{accent}{RGB}{22, 74, 114}
+\definecolor{muted}{RGB}{80, 80, 80}
+
+%% ── Hyperref ─────────────────────────────────────────────────
+\hypersetup{
+    hidelinks,
+    pdfauthor   = {Soumya Gupta},
+    pdftitle    = {Soumya Gupta - SOC Analyst Resume 2026},
+    pdfkeywords = {SOC Analyst, Security Operations Center, Security Monitoring,
+                   Alert Triage, Incident Response, Incident Escalation,
+                   MITRE ATT\&CK, Detection Rules, False Positives,
+                   RHCSA, Red Hat Linux, Linux Administration,
+                   Firewall Configuration, SELinux, System Log Management,
+                   Log Analysis, Endpoint Security, Cloud Logs, SaaS Logs,
+                   Root Cause Analysis, Data Validation, Anomaly Detection,
+                   Python, SQL, Bash, Shell Scripting, Docker, Git,
+                   Operational Monitoring, Visibility Coverage,
+                   Cross-Functional Coordination, Communication,
+                   JIRA, Agile, System Testing, UAT,
+                   Digital Assets, Cryptocurrency, Cybersecurity,
+                   Internal Security, Cyber Security, Access Control}
+}
+
+%% ── Section headings ─────────────────────────────────────────
+\titleformat{\section}
+  {\normalsize\bfseries\color{accent}\raggedright}
+  {}{0em}{\MakeUppercase}
+  [\vspace{-5pt}\textcolor{accent}{\rule{\linewidth}{0.5pt}}]
+\titlespacing*{\section}{0pt}{7pt}{2pt}
+
+%% ── List settings ────────────────────────────────────────────
+\setlist[itemize]{
+    leftmargin = 1.2em,
+    topsep     = 1pt,
+    itemsep    = 2pt,
+    parsep     = 0pt,
+    partopsep  = 0pt,
+    label      = \small\textbullet
+}
+
+%% ── Global spacing ───────────────────────────────────────────
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\raggedright
+
+%% ── Commands ─────────────────────────────────────────────────
+\newcommand{\role}[3]{%
+  \vspace{2pt}%
+  {\bfseries #1}\hfill{\small\color{muted}\textit{#3}}\\[-2pt]%
+  {\small\color{muted}\textit{#2}}%
+}
+\newcommand{\skillrow}[2]{%
+  \noindent{\small\bfseries #1:}\enspace{\small #2}\\[1pt]%
+}
+
+%% ============================================================
+\begin{document}
+%% ============================================================
+
+%% ── HEADER ───────────────────────────────────────────────────
+\begin{center}
+  {\LARGE\bfseries SOUMYA GUPTA}\\[2pt]
+  {\small\color{muted}SOC Analyst \textbar{} RHCSA \textbar{} Python, SQL \& Bash \textbar{} Linux Security \& Log Management \textbar{} Root Cause Analysis}\\[3pt]
+  {\small
+  \href{tel:+917674981551}{+91-76749-81551}\enspace\textbullet\enspace
+  \href{mailto:soumya1698@gmail.com}{soumya1698@gmail.com}\enspace\textbullet\enspace
+  \href{https://linkedin.com/in/soumya-gupta1698}{linkedin.com/in/soumya-gupta1698}}
+\end{center}
+
+\vspace{-2pt}
+
+%% ── PROFESSIONAL SUMMARY ─────────────────────────────────────
+\section{Professional Summary}
+
+RHCSA-certified SOC Analyst with over 2 years of hands-on experience in operational monitoring, rule-based anomaly detection, root cause analysis, and cross-functional coordination with Engineering and IT teams. Linux system administration background spanning firewall configuration (firewalld), SELinux security policies, system log management (journalctl, rsyslog), and access control — combined with proficiency in Python, SQL, and Bash / Shell Scripting for log analysis and automation. Built real-time monitoring dashboards with alert thresholds, and rule-based detection pipelines processing \textbf{20,000+} records — reducing false positives by \textbf{40\%} and automating \textbf{12+ hrs/week} of manual review. Executed \textbf{400+} system test scenarios with \textbf{zero critical defects}, demonstrating structured triage and escalation discipline.
+
+%% ── TECHNICAL SKILLS ─────────────────────────────────────────
+\section{Technical Skills}
+
+\skillrow{Security \& Linux Administration}{RHCSA (Red Hat Linux), Firewall Configuration (firewalld), SELinux Security Policies, System Log Management (journalctl, rsyslog), User Access Control, Process Monitoring, Endpoint Administration, Root Cause Analysis, Anomaly Detection, Incident Escalation}
+\skillrow{Scripting \& Automation}{Python (Pandas, NumPy, scikit-learn), SQL (CTEs, Window Functions, Joins, Subqueries), Bash / Shell Scripting, Docker, Git, Power Automate}
+\skillrow{Monitoring \& Visualisation}{Real-Time Dashboards, Alert Configuration, KPI Monitoring, Tableau, Power BI (DAX), SAP Analytics Cloud, Excel (Pivot Tables, Power Query, Macros)}
+\skillrow{Systems \& Platforms}{Linux (RHEL), MySQL, SAP S/4HANA, SAP Datasphere, Cloud-Based Data Platforms, JIRA, Confluence, MS Teams}
+\skillrow{Methodology}{System Integration Testing, UAT, Triage \& Escalation, Agile, Scrum, Process Documentation, Communication (Technical \& Non-Technical)}
+
+%% ── PROFESSIONAL EXPERIENCE ──────────────────────────────────
+\section{Professional Experience}
+
+\role{Sr. Executive — Operations Monitoring \& Analytics}{Leap India Limited, Mumbai, Maharashtra}{Nov 2024 – Present}
+
+\begin{itemize}
+  \item \textbf{Promoted} from Management Trainee to Sr. Executive within \textbf{6 months}, recognised for building monitoring infrastructure and leading incident coordination across Supply Chain and Finance functions.
+  \item Designed and deployed real-time monitoring dashboards with alert thresholds in SAP Analytics Cloud and Tableau — provided \textbf{visibility coverage} across all regions, eliminated \textbf{12+ hours/week} of manual review, and enabled faster triage of operational anomalies.
+  \item Built rule-based detection pipelines processing \textbf{20,000+ records} using Python and SQL — wrote structured detection rules, tuned thresholds to reduce false positives by \textbf{40\%}, and established root cause analysis workflows for escalated anomalies.
+  \item Engineered log ingestion workflows from SAP Datasphere into MySQL — applied indexing strategies to accelerate query performance for real-time monitoring, enabling analysts to query application and SaaS logs in seconds.
+  \item Ensured \textbf{zero critical defects} at SAP S/4HANA ERP go-live by executing \textbf{400+ system test scenarios} across MM and SD modules — structured triage, defect escalation, and resolution tracking with Engineering teams.
+  \item Worked cross-functionally with Engineering and IT to improve visibility coverage, establish security monitoring across application, SaaS, and cloud data sources, and run projects from beginning to end to level up operational monitoring.
+\end{itemize}
+
+\vspace{1pt}
+
+\role{Data Analysis \& Anomaly Detection Research Contributor}{Collaborative Research Project, Delhi}{Aug 2020 – Aug 2021}
+
+\begin{itemize}
+  \item Built an end-to-end detection pipeline — extracted, cleaned, and analysed \textbf{10,000+ records} using Python (Pandas, NumPy, scikit-learn); identified anomalies through rule-based validation checks and co-designed a structured data collection framework with PhD researchers.
+\end{itemize}
+
+%% ── EDUCATION ────────────────────────────────────────────────
+\section{Education}
+
+{\bfseries UPSC Civil Services Exam — Research \& Analytical Study}\hfill{\small\color{muted}\textit{Nov 2021 – Aug 2024}}\\
+{\small\color{muted}Covered Internal Security, basics of Cyber Security, governance, and data interpretation across Economics, Statistics, and Public Policy. Developed investigative research, structured analytical thinking, and strong communication skills.}
+
+\vspace{2pt}
+{\bfseries Bachelor of Technology (B.Tech)}\hfill{\small\color{muted}\textit{2016 – 2020}}\\
+{\small\color{muted}Gandhi Institute of Technology and Management (GITAM), Visakhapatnam\hfill CGPA: 7.4 / 10.0}
+
+%% ── CERTIFICATIONS & TRAINING ────────────────────────────────
+\section{Certifications \& Training}
+
+{\bfseries Red Hat Certified System Administrator (RHCSA)} — Red Hat\hfill{\small\color{muted}\textit{Jun 2018}}\\
+{\small\color{muted}Linux security: firewall configuration (firewalld), SELinux policies, system log management (journalctl, rsyslog), user access control, process monitoring, network troubleshooting, shell scripting.}
+
+\vspace{1pt}
+{\bfseries Data Analytics \& Data Science Program} — Coding Ninjas\hfill{\small\color{muted}\textit{Sep 2024 – Sep 2025}}
+
+\vspace{1pt}
+{\bfseries SAP Datasphere BDC — Comprehensive Training} — Udemy\hfill{\small\color{muted}\textit{Feb 2026 – Present \emph{(In Progress)}}}
+
+%% ============================================================
+\end{document}

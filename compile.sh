@@ -55,7 +55,7 @@ ROLE="${2:-${PROFILE}}"
 DATESTAMP="$(date '+%Y%m%d')"
 TIMESTAMP="$(date '+%Y%m%d_%H%M%S')"
 OUTPUT_DIR="${ROOT_DIR}/output/${PROFILE}/${DATESTAMP}"
-OUTPUT_FILE="SoumyaGupta_${ROLE}_${TIMESTAMP}.pdf"
+OUTPUT_FILE="Soumya_Gupta_${ROLE}_${TIMESTAMP}.pdf"
 
 # ── Header ────────────────────────────────────────────
 echo "============================================"

@@ -1,0 +1,105 @@
+%% ============================================================
+%% Cover Letter — Soumya Gupta | Data Analyst
+%% Version   : 1.0  (May 2026)
+%% Compiler  : pdflatex  |  1 page
+%% Style     : Mirrors base-data-analyst/resume.tex (header, fonts,
+%%             colours, hyperref). Use as a base template; swap the
+%%             bracketed placeholders for company-specific letters.
+%% ============================================================
+\documentclass[10pt, letterpaper]{article}
+
+%% ── Packages ─────────────────────────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled=0.88]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[margin=0.7in, top=0.5in, bottom=0.5in]{geometry}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+%% ── Colours ──────────────────────────────────────────────────
+\definecolor{accent}{RGB}{22, 74, 114}
+\definecolor{muted}{RGB}{80, 80, 80}
+
+%% ── Hyperref ─────────────────────────────────────────────────
+\hypersetup{
+    hidelinks,
+    pdfauthor   = {Soumya Gupta},
+    pdftitle    = {Soumya Gupta - Data Analyst Cover Letter 2026},
+    pdfkeywords = {Data Analyst, SQL, Power BI, Tableau, Python, Excel,
+                   SAP, Supply Chain, Logistics, Finance, Cover Letter}
+}
+
+%% ── List settings ────────────────────────────────────────────
+\setlist[itemize]{
+    leftmargin = 1.2em,
+    topsep     = 2pt,
+    itemsep    = 3pt,
+    parsep     = 0pt,
+    partopsep  = 0pt,
+    label      = \small\textbullet
+}
+
+%% ── Global spacing ───────────────────────────────────────────
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\raggedright
+
+%% ============================================================
+\begin{document}
+%% ============================================================
+
+%% ── HEADER (matches resume.tex) ──────────────────────────────
+\begin{center}
+  {\LARGE\bfseries SOUMYA GUPTA}\\[2pt]
+  {\small\color{muted}Data Analyst \textbar{} SQL \textbar{} Power BI \textbar{} Tableau \textbar{} Python \textbar{} Excel}\\[3pt]
+  {\small
+  \href{tel:+917674981551}{+91-76749-81551}\enspace\textbullet\enspace
+  \href{mailto:soumya1698@gmail.com}{soumya1698@gmail.com}\enspace\textbullet\enspace
+  \href{https://linkedin.com/in/soumya-gupta1698}{linkedin.com/in/soumya-gupta1698}}
+\end{center}
+
+\vspace{2pt}
+\textcolor{accent}{\rule{\linewidth}{0.5pt}}
+\vspace{4pt}
+
+%% ── DATE & RECIPIENT ─────────────────────────────────────────
+\today
+
+\vspace{4pt}
+
+Hiring Manager\\
+{[Company Name]}\\
+{[City, Country]}
+
+\vspace{2pt}
+
+{\bfseries\color{accent}Re: Application for [Role Title]}
+
+%% ── LETTER BODY ──────────────────────────────────────────────
+Dear Hiring Manager,
+
+I'm writing to apply for the [Role Title] position at [Company Name]. I work as a Data Analyst at Leap India, a manufacturing and logistics company, where I've spent about two years building dashboards and data pipelines for the Supply Chain, Finance, and Ops teams. SQL, Power BI, Tableau, Python, and Excel are my day to day stack.
+
+A few things from that work that might be relevant:
+
+\begin{itemize}
+  \item Replaced manual Excel reporting with automated dashboards in Power BI, Tableau, and SAP Analytics Cloud. Saved the team about 12 hours a week. Ops managers across regions check them every morning for OTIF, OFR, and efficiency numbers.
+  \item Pulled Sales, Logistics, and Finance data into MySQL data marts so teams could query things themselves instead of routing every request through me.
+  \item Built pipelines from SAP Datasphere into MySQL with Star Schema modelling. Cleaned and validated 20,000+ rows of operational data; error rates dropped by about 40\%.
+  \item Ran 400+ UAT test cases during our SAP S/4HANA transition and helped map data fields between the old and new systems.
+\end{itemize}
+
+I lean on ChatGPT, Claude, and GitHub Copilot for SQL and DAX, which has cut my turnaround on most reporting requests by roughly a fifth. On the side, I'm wrapping up an SAP Datasphere BDC course and recently finished a Data Analytics \& Data Science program with Coding Ninjas.
+
+I'd be glad to walk through any of this in more detail. Thanks for taking the time to read this.
+
+\vspace{8pt}
+
+Best regards,\\[10pt]
+Soumya Gupta
+
+%% ============================================================
+\end{document}

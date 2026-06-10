@@ -1,0 +1,14 @@
+---
+description: Always humanize any text written or edited in this project. Apply automatically whenever generating or modifying content.
+globs:
+  - "**/*.tex"
+  - "**/*.md"
+  - "**/*.txt"
+alwaysApply: true
+---
+
+# Always humanize
+
+Before finishing any text edit in this project, run it through the humanizer skill at `.cursor/skills/humanizer/SKILL.md`. This applies to resume content, summaries, bullet points, cover letters, and any prose.
+
+Do not wait for the user to ask. Humanize by default.

@@ -1,0 +1,160 @@
+%% ============================================================
+%% ATS-Optimised Resume — Soumya Gupta | Application Support Engineer
+%% Target    : Accenture — Application Support Engineer (SAP)
+%%             Covers JDs: SAP Basis Administration + SAP Ariba
+%% Technique : Google XYZ  |  Compiler: pdflatex  |  1 page
+%% ============================================================
+\documentclass[10pt, letterpaper]{article}
+
+%% ── Packages ─────────────────────────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled=0.88]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[margin=0.48in, top=0.38in, bottom=0.32in]{geometry}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+
+%% ── Colours ──────────────────────────────────────────────────
+\definecolor{accent}{RGB}{22, 74, 114}
+\definecolor{muted}{RGB}{80, 80, 80}
+
+%% ── Hyperref ─────────────────────────────────────────────────
+\hypersetup{
+    hidelinks,
+    pdfauthor   = {Soumya Gupta},
+    pdftitle    = {Soumya Gupta - Application Support Engineer Resume 2026},
+    pdfkeywords = {Application Support Engineer, Application Support,
+                   SAP, SAP Basis Administration, SAP Basis, SAP Ariba,
+                   SAP S4HANA, SAP Datasphere, SAP Analytics Cloud, SAP OLTP,
+                   System Monitoring, Performance Monitoring, Performance Tuning,
+                   Incident Management, Problem Solving, Root Cause Analysis,
+                   Troubleshooting, Issue Resolution, Software Support Processes,
+                   Anomaly Detection, System Reliability, System Performance,
+                   System Landscape, Installation, Configuration, Maintenance,
+                   Database Management, Backup and Recovery, Backup Procedures,
+                   SAP Transports, System Upgrades, Software Support,
+                   Cross-Functional Collaboration, Stakeholder Communication,
+                   Knowledge Base, Documentation, SOP, Runbook, Knowledge Sharing,
+                   SQL, MySQL, ETL, Data Validation, UAT, Linux, RHCSA,
+                   Bash, Shell Scripting, JIRA, Confluence, Agile, Scrum,
+                   Business Systems, Critical Systems, Monitoring and Alerting}
+}
+
+%% ── Section headings ─────────────────────────────────────────
+\titleformat{\section}
+  {\normalsize\bfseries\color{accent}\raggedright}
+  {}{0em}{\MakeUppercase}
+  [\vspace{-5pt}\textcolor{accent}{\rule{\linewidth}{0.5pt}}]
+\titlespacing*{\section}{0pt}{7pt}{2pt}
+
+%% ── List settings ────────────────────────────────────────────
+\setlist[itemize]{
+    leftmargin = 1.2em,
+    topsep     = 1pt,
+    itemsep    = 1pt,
+    parsep     = 0pt,
+    partopsep  = 0pt,
+    label      = \small\textbullet
+}
+
+%% ── Global spacing ───────────────────────────────────────────
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\raggedright
+
+%% ── Commands ─────────────────────────────────────────────────
+\newcommand{\role}[3]{%
+  \vspace{2pt}%
+  {\bfseries #1}\hfill{\small\color{muted}\textit{#3}}\\[-2pt]%
+  {\small\color{muted}\textit{#2}}%
+}
+\newcommand{\skillrow}[2]{%
+  \noindent{\small\bfseries #1:}\enspace{\small #2}\\[1pt]%
+}
+
+%% ============================================================
+\begin{document}
+%% ============================================================
+
+%% ── HEADER ───────────────────────────────────────────────────
+\begin{center}
+  {\LARGE\bfseries SOUMYA GUPTA}\\[2pt]
+  {\small\color{muted}Application Support Engineer \textbar{} SAP Environment Support \textbar{} System Monitoring \textbar{} Incident Management \textbar{} Troubleshooting \textbar{} SQL}\\[3pt]
+  {\small
+  \href{tel:+917674981551}{+91-76749-81551}\enspace\textbullet\enspace
+  \href{mailto:soumya1698@gmail.com}{soumya1698@gmail.com}\enspace\textbullet\enspace
+  \href{https://linkedin.com/in/soumya-gupta1698}{linkedin.com/in/soumya-gupta1698}}
+\end{center}
+
+\vspace{-2pt}
+
+%% ── PROFESSIONAL SUMMARY ─────────────────────────────────────
+\section{Professional Summary}
+
+Application Support Engineer with about 2 years at a manufacturing and logistics company, working day to day inside SAP environments (S/4HANA, Datasphere, OLTP). A lot of my job is monitoring systems, investigating issues, and troubleshooting failures across business-critical components. Comfortable with system monitoring, incident management, root cause analysis, and documenting fixes so the team can reuse them. RHCSA-certified on Linux and currently building SAP Basis and Ariba knowledge.
+
+%% ── TECHNICAL SKILLS ─────────────────────────────────────────
+\section{Technical Skills}
+
+\skillrow{Application \& System Support}{Application Support, System Monitoring, Performance Monitoring, Incident Management, Problem Solving, Root Cause Analysis, Troubleshooting, Issue Resolution, Software Support Processes, Anomaly Detection, System Reliability}
+\skillrow{SAP Ecosystem}{SAP S/4HANA, SAP Datasphere, SAP Analytics Cloud (SAC), SAP OLTP, SAP Basis Administration (Foundational), SAP Ariba (Foundational), SAP Transports (Exposure), System Landscape Support}
+\skillrow{Monitoring, Performance \& Operations}{System Monitoring \& Alerting, Performance Tuning, Operational Excellence, Backup \& Recovery (Exposure), Installation / Configuration / Maintenance, Linux (RHCSA), Job Scheduling}
+\skillrow{SQL, Databases \& Data}{SQL (CTEs, Window Functions, Joins, Query Optimization), MySQL, Database Management, ETL, Data Validation, Data Quality, Bash / Shell Scripting}
+\skillrow{Collaboration \& Documentation}{Cross-Functional Collaboration, Stakeholder Communication (Technical \& Non-Technical), Knowledge Base, SOPs / Runbooks, Documentation, Knowledge Sharing, UAT}
+\skillrow{Tools \& Ways of Working}{JIRA, Confluence, Git, ChatGPT / Claude / GitHub Copilot, Agile / Scrum}
+
+%% ── PROFESSIONAL EXPERIENCE ──────────────────────────────────
+\section{Professional Experience}
+
+\role{Sr. Executive --- Data Analyst}{Leap India Limited, Mumbai, Maharashtra}{Nov 2024 -- Present}
+
+\begin{itemize}
+  \item Monitor production data systems and SAP-fed pipelines for performance and reliability. Set up alerting that flags anomalies and volume drops early, so issues get caught before they break downstream reports.
+  \item First point of contact for data and reporting issues across \textbf{3} business functions. Investigate failures, run root cause analysis, and resolve incidents end to end, tracking everything in JIRA.
+  \item Supported the SAP S/4HANA transition: ran \textbf{400+} UAT test cases (all passed) and mapped data fields between legacy and new systems, troubleshooting transport and configuration mismatches as they came up.
+  \item Manage MySQL databases and a Python/SQL/Bash validation routine that runs over \textbf{20,000+} rows. Fixed source mismatches at the root and dropped data errors by about \textbf{40\%}.
+  \item Wrote SOPs, runbooks, and troubleshooting guides for the dashboards and pipelines. Built out a knowledge base so the team and new hires can self-resolve the common issues.
+  \item Tune slow SQL queries and pipeline jobs for performance. Regular CTEs, window functions, and joins for extraction, reconciliation, and ad hoc fixes.
+  \item Work with cross-functional teams and non-technical stakeholders to explain issues clearly and drive timely resolution. SME for data questions across the company, promoted from Management Trainee about 6 months in.
+\end{itemize}
+
+\vspace{1pt}
+
+\role{Data Pipeline Research Contributor}{Collaborative Research Project, Delhi}{Aug 2020 -- Aug 2021}
+
+\begin{itemize}
+  \item Built and debugged a data pipeline for a lung disease study, cleaning about \textbf{10,000} chest X-ray records (Python, Pandas, NumPy).
+\end{itemize}
+
+%% ── EDUCATION ────────────────────────────────────────────────
+\section{Education}
+
+{\bfseries Bachelor of Technology (B.Tech), Computer Science and Engineering}\hfill{\small\color{muted}\textit{2016 -- 2020}}\\
+{\small\color{muted}Gandhi Institute of Technology and Management University (GITAM), Visakhapatnam\hfill 75\%}
+
+\vspace{2pt}
+{\bfseries Senior Secondary (XII) --- AP Board of Intermediate Education}\hfill{\small\color{muted}\textit{2016}}\\
+{\small\color{muted}FIITJEE, Visakhapatnam\hfill 92.5\%}
+
+\vspace{2pt}
+{\bfseries Secondary (X) --- CBSE}\hfill{\small\color{muted}\textit{2014}}\\
+{\small\color{muted}Delhi Public School (DPS), Visakhapatnam\hfill CGPA: 8.2 / 10.0}
+
+%% ── CERTIFICATIONS & TRAINING ────────────────────────────────
+\section{Certifications \& Training}
+
+{\bfseries Red Hat Certified System Administrator (RHCSA)} --- Red Hat\hfill{\small\color{muted}\textit{Jun 2018}}\\
+{\small\color{muted}Linux administration, system configuration, installation \& maintenance, diagnostics}
+
+\vspace{1pt}
+{\bfseries SAP Datasphere BDC --- Comprehensive Training} --- Udemy\hfill{\small\color{muted}\textit{Feb 2026 -- Present \emph{(In Progress)}}}
+
+\vspace{1pt}
+{\bfseries Data Analytics \& Data Science Program} --- Coding Ninjas\hfill{\small\color{muted}\textit{Sep 2024 -- Sep 2025}}
+
+%% ============================================================
+\end{document}

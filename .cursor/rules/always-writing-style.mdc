@@ -1,0 +1,15 @@
+---
+description: Apply the spartan writing-style skill to all resume content. Apply automatically whenever generating or modifying a resume.
+globs:
+  - "**/resume.tex"
+  - "**/cover-letter.tex"
+alwaysApply: true
+---
+
+# Always apply writing style to resumes
+
+Whenever you write or edit a resume in this project, follow the writing-style skill at `.cursor/skills/writing-style/SKILL.md`. This covers headlines, summaries, bullet points, skill rows, and cover letters.
+
+Do not wait for the user to ask. Apply the style by default. Pair it with the humanizer skill: humanize first, then check the text against the writing-style rules, and remove every em dash before you finish.
+
+The resume must clear three gates: the company ATS keyword screen, the recruiter 6-second scan, and AI-content detection. A resume that reads like a language model gets routed to a lower-priority queue or dismissed. See the Mission section in `.cursor/skills/resume-tailoring/SKILL.md` for the full process.

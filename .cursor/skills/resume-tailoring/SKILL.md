@@ -15,6 +15,42 @@ When the user provides a job description:
 1. **Always start with Step 0** — check if a profile already exists for this company and ask the user what to do.
 2. Then execute the chosen path: full flow (Steps 1-9) or a subset of steps.
 
+## Mission (read first)
+
+Make the resume hard to reject. Not with tricks. With exact-match keywords, defensible metrics, and authentic phrasing.
+
+Every resume this process produces clears two gates and survives a third:
+
+1. **ATS keyword screen.** The parser ranks you against the JD. Mirror exact JD language. Cover 100% of Tier 1 keywords. Score 80%+ before submit, 85%+ for Fortune 500.
+2. **Recruiter 6-second scan.** A human skims the top third for 6-7 seconds. Role, experience level, and the top 2-3 bold metrics must be obvious without deep reading.
+3. **AI-content detection.** Workday, Greenhouse, and Lever shipped AI-content classifiers in late 2025. Around 49% of hiring managers say they auto-dismiss resumes that read like ChatGPT. Write in a real human voice.
+
+Non-negotiable methods:
+
+- **Google XYZ on every experience bullet:** "Accomplished [X] as measured by [Y], by doing [Z]." Order is flexible as long as all three parts are present. Lead with the metric when it is strong.
+- **6-second rule drives layout:** put the strongest bold metric in the first bullet of the most recent role. Single column. Bold numbers as visual anchors.
+- **AI tailors, never invents:** every number must be defensible in one sentence. Vary bullet structure. Cut generic phrasing.
+
+### Voice & style (required step)
+
+Before you finish any resume, run the text through two skills, in this order:
+
+1. `.cursor/skills/humanizer/SKILL.md` — strip AI-writing tells.
+2. `.cursor/skills/writing-style/SKILL.md` — spartan, direct, short active sentences, no em dashes, no filler words.
+
+Full order of operations: draft bullets with XYZ, humanize, apply the writing-style check, remove every em dash, then compile.
+
+### AI-detection red flags (remove on sight)
+
+These patterns get resumes flagged or auto-dismissed by 2026 recruiters and classifiers:
+
+- Em dashes. Use commas or periods instead.
+- Filler transitions: "however", "moreover", "furthermore".
+- Overused AI verbs: "spearheaded", "leveraged", "synergy", "delve", "showcasing".
+- Opener clichés: "results-driven", "seasoned", "passionate professional".
+- Oddly precise fake numbers like "37.2%". Use clean, defensible figures.
+- Identical structure on every bullet. Vary the openings and the XYZ order.
+
 ## Workflow
 
 ### 0. Check for Existing Profile
@@ -208,6 +244,8 @@ Produce this report:
 
 **h) Projected Score After Fixes** — estimated score if all gaps are addressed.
 
+**i) Voice & AI-tells check** — confirm the resume passes the humanizer and writing-style skills. No em dashes, no AI filler words, varied bullet structure, every metric defensible in one sentence. Flag any line that reads AI-generated and rewrite it in a plain human voice.
+
 Target scores (from ATS_TIPS.md):
 - 75% minimum for any application
 - 80%+ for standard roles
@@ -232,6 +270,7 @@ At the very end, always provide a final summary to the user in this exact table 
 | Keyword Coverage | [X Tier 1 / Y total Tier 1] [Z Tier 2 / W total Tier 2] |
 | Keyword Density | [X% — OK / Warning / Stuffing] |
 | 6-Second Scan | [Pass / Borderline / Fail] |
+| Voice / AI-tells | [Clean / Needs work — no em dashes, no AI filler] |
 | ATS Score | [X / 100 — one-line verdict] |
 | Output PDF | `output/company-<name>/<date>/SoumyaGupta_<ROLE>_<timestamp>.pdf` |
 | Compile Command | `make company-<name> ROLE="RoleTitle"` |
@@ -250,6 +289,7 @@ At the very end, always provide a final summary to the user in this exact table 
 - 70-80% of JD keywords should be in the experience section with contextual proof.
 - Overall keyword density must stay between 1-3%.
 - If a metric can't be explained in 1-2 sentences, don't use it.
+- Apply the humanizer and writing-style skills before compiling. Remove every em dash and AI filler word so the resume reads as a real person, not a language model.
 
 ## LaTeX Commands Reference
 
