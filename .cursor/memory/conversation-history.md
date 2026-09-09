@@ -200,3 +200,17 @@
 - **Did:** Both bases: changed the second "and" in the build sentence to "then" (sequence reads cleaner); analyst closer "reporting people use" -> "answers people act on". Then per user, set both openers to "Data {Analyst,Engineer} with about 2 years of experience, ..." (reverted the brief "two years in" / quantifier-free experiment for the tenure phrase only). Recompiled both via tectonic, 1 page; refreshed roots + output/20260615/.
 - **Decisions:** User wants "about 2 years of experience" wording despite earlier quantifier removal; that earlier rule applied to the metric numbers, not the tenure phrase. Both bases kept in sync.
 - **Open:** None.
+
+## 2026-09-09 14:29 — Base resume revision dates
+
+- **Goal:** Add dates of revision to both base resumes
+- **Did:** Updated headers in `base-data-analyst/resume.tex` and `base-data-engineer/resume.tex`: added `%% Revised : 15 Jun 2026`; dated v15/v3 (09 Jun), v16/v4 (10 Jun), plus follow-up notes for 11 Jun (summary) and 15 Jun (education years + summary polish). Comment-only; no PDF recompile
+- **Decisions:** Kept revision dates in LaTeX comments only (ATS-safe; Version already lived there). Last revised = 15 Jun 2026 to match last content change / root PDF stamp, not today's date
+- **Open:** If user wanted a visible on-PDF revised date, not done yet
+
+## 2026-09-09 14:29 — Set revised to today
+
+- **Goal:** Use today's date as last revision on base resumes
+- **Did:** Set `%% Revised : 09 Sep 2026` in both base-data-analyst and base-data-engineer resume.tex headers
+- **Decisions:** Left historical version notes (Jun dates) unchanged; only the Revised field moved to today
+- **Open:** None
