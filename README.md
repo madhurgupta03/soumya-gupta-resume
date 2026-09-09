@@ -50,13 +50,13 @@ resume/
 ├── base-data-engineer/         ← base profile: Data Engineer
 │   └── resume.tex
 │
-├── company-swiggy/             ← JD-tailored: Swiggy (T&S + Analytics roles)
+├── company/company-swiggy/             ← JD-tailored: Swiggy (T&S + Analytics roles)
 │   └── resume.tex              ← derived from base-data-analyst, JD-optimised
 │
 └── output/                     ← all compiled PDFs (gitignored)
     ├── base-data-analyst/
     ├── base-data-engineer/
-    └── company-swiggy/
+    └── company/company-swiggy/
 ```
 
 ### Naming Convention
@@ -64,7 +64,7 @@ resume/
 | Folder prefix | Purpose | Rule |
 |---|---|---|
 | `base-<profile>` | Canonical resume for a role type | Always keep factually accurate. Never inflate. |
-| `company-<name>` | JD-tailored copy of a base profile | One folder per company. Derived, never independent. |
+| `company/company-<name>` | JD-tailored copy of a base profile | One folder per company. Derived, never independent. |
 
 ---
 
@@ -76,7 +76,7 @@ make
 
 # Compile a specific profile
 make base-data-analyst
-make company-swiggy  ROLE="Analyst_TrustSafety"
+make company/company-swiggy  ROLE="Analyst_TrustSafety"
 
 # Compile everything at once
 make all
@@ -219,8 +219,8 @@ Read the JD carefully and note:
 **Step 2 — Create a company folder**
 
 ```bash
-mkdir company-<name>
-cp base-data-analyst/resume.tex  company-<name>/resume.tex
+mkdir company/company-<name>
+cp base-data-analyst/resume.tex  company/company-<name>/resume.tex
 ```
 
 **Step 3 — Tailor in this order (highest ATS impact first)**
@@ -237,7 +237,7 @@ cp base-data-analyst/resume.tex  company-<name>/resume.tex
 **Step 4 — Build and check page count**
 
 ```bash
-make company-<name> ROLE="RoleTitle"
+make company/company-<name> ROLE="RoleTitle"
 ```
 
 The compiled log shows `(1 page, ...)` or `(2 pages, ...)`. Always target **1 page**. If it overflows:
@@ -270,8 +270,8 @@ git commit -m "update base-data-analyst: add HQL/Hive, Google Sheets to skills"
 #### Committing a new company profile
 
 ```bash
-git add company-<name>/
-git commit -m "add company-<name>: tailored for <Role> JD"
+git add company/company-<name>/
+git commit -m "add company/company-<name>: tailored for <Role> JD"
 ```
 
 #### Checking what has changed
@@ -281,17 +281,17 @@ git commit -m "add company-<name>: tailored for <Role> JD"
 git diff
 
 # See changes to a specific profile
-git diff company-swiggy/resume.tex
+git diff company/company-swiggy/resume.tex
 
 # See history of changes to a file
-git log --oneline company-swiggy/resume.tex
+git log --oneline company/company-swiggy/resume.tex
 ```
 
 #### Reverting a company resume to match its base
 
 ```bash
 # Overwrite the company resume with the latest base
-cp base-data-analyst/resume.tex company-<name>/resume.tex
+cp base-data-analyst/resume.tex company/company-<name>/resume.tex
 ```
 
 ---
@@ -317,7 +317,7 @@ output/<profile>/<YYYYMMDD_HHMMSS>/SoumyaGupta_<ROLE>_<YYYYMMDD_HHMMSS>.pdf
 
 Examples:
 ```
-output/company-swiggy/20260306_121039/SoumyaGupta_Analyst_TrustSafety_20260306_121039.pdf
+output/company/company-swiggy/20260306_121039/SoumyaGupta_Analyst_TrustSafety_20260306_121039.pdf
 output/base-data-analyst/20260306_130000/SoumyaGupta_base-data-analyst_20260306_130000.pdf
 ```
 
@@ -365,28 +365,28 @@ Use this when tailoring against a **specific JD**. Always derive from the closes
 ### Step 1 — Create the folder
 
 ```bash
-mkdir company-zepto
+mkdir company/company-zepto
 ```
 
 ### Step 2 — Copy from the relevant base
 
 ```bash
-cp base-data-analyst/resume.tex  company-zepto/resume.tex
+cp base-data-analyst/resume.tex  company/company-zepto/resume.tex
 ```
 
 ### Step 3 — Tailor to the JD
 
-Edit `company-zepto/resume.tex` following the ATS tailoring priority order above. Keep all factual details (dates, company names, metrics) unchanged.
+Edit `company/company-zepto/resume.tex` following the ATS tailoring priority order above. Keep all factual details (dates, company names, metrics) unchanged.
 
 ### Step 4 — Compile
 
 ```bash
-make company-zepto ROLE="DataAnalyst_Growth"
+make company/company-zepto ROLE="DataAnalyst_Growth"
 ```
 
 PDF saved to:
 ```
-output/company-zepto/SoumyaGupta_DataAnalyst_Growth_<timestamp>.pdf
+output/company/company-zepto/<timestamp>/SoumyaGupta_DataAnalyst_Growth_<timestamp>.pdf
 ```
 
 ---
@@ -466,11 +466,11 @@ Starting from scratch for a new application?
 │           make base-data-scientist
 │
 └── Same role, new company JD?
-      └── mkdir company-<name>/
-            cp base-data-analyst/resume.tex company-<name>/
+      └── mkdir company/company-<name>/
+            cp base-data-analyst/resume.tex company/company-<name>/
             # tailor resume.tex to JD (summary → skills → bullets)
-            make company-<name> ROLE="JobTitle"
+            make company/company-<name> ROLE="JobTitle"
             # check page count in PDF (must be 1 page)
             # run through Jobscan for ATS score
-            git add company-<name>/ && git commit -m "add company-<name>"
+            git add company/company-<name>/ && git commit -m "add company/company-<name>"
 ```

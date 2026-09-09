@@ -56,8 +56,8 @@ Target: capture ALL Tier 1 keywords, 80%+ of Tier 2, and Tier 3 where they fit n
 Pick a short, lowercase name for the company. Create a folder and copy the closest base profile into it.
 
 ```
-mkdir company-<name>
-cp base-data-analyst/resume.tex company-<name>/resume.tex
+mkdir company/company-<name>
+cp base-data-analyst/resume.tex company/company-<name>/resume.tex
 ```
 
 If the role is closer to a Data Engineer, copy from base-data-engineer/ instead.
@@ -87,7 +87,7 @@ Rules:
 
 ## Step 4: Tailor the Resume
 
-Open company-<name>/resume.tex and edit in this exact order, from highest ATS impact to lowest:
+Open company/company-<name>/resume.tex and edit in this exact order, from highest ATS impact to lowest:
 
 ### 4a. PDF Metadata (pdfkeywords block near the top)
 
@@ -192,13 +192,13 @@ If density exceeds 3%: remove the weakest instance of the most-repeated keyword 
 Run:
 
 ```
-make company-<name> ROLE="RoleTitle"
+make company/company-<name> ROLE="RoleTitle"
 ```
 
 For example:
 
 ```
-make company-norstella ROLE="Analyst_Classifications"
+make company/company-norstella ROLE="Analyst_Classifications"
 ```
 
 The compile log will show "Output written on resume.pdf (1 page, ...)" or "(2 pages, ...)". The resume must be exactly 1 page.
@@ -220,7 +220,7 @@ Recompile after each change until it fits on 1 page.
 Open the compiled PDF from the output folder:
 
 ```
-output/company-<name>/<YYYYMMDD>/SoumyaGupta_<ROLE>_<YYYYMMDD_HHMMSS>.pdf
+output/company/company-<name>/<YYYYMMDD>/SoumyaGupta_<ROLE>_<YYYYMMDD_HHMMSS>.pdf
 ```
 
 ### Standard Review
@@ -274,8 +274,8 @@ If the score is low:
 Once the resume is finalised:
 
 ```
-git add company-<name>/
-git commit -m "add company-<name>: tailored for <Role> at <Company>"
+git add company/company-<name>/
+git commit -m "add company/company-<name>: tailored for <Role> at <Company>"
 ```
 
 Only .tex files are tracked. PDFs are gitignored.
@@ -350,11 +350,11 @@ make clean-image                      Remove the Docker image
 |---|---|---|
 | Data / Business Analyst (base) | base-data-analyst/ | make base-data-analyst |
 | Data Engineer (base) | base-data-engineer/ | make base-data-engineer |
-| Swiggy — Analyst, Trust & Safety | company-swiggy/ | make company-swiggy ROLE="Analyst_TrustSafety" |
-| Honeywell | company-honeywell/ | make company-honeywell |
-| NetApp | company-netapp/ | make company-netapp |
-| Norstella — Analyst I, Classifications | company-norstella/ | make company-norstella ROLE="Analyst_Classifications" |
-| PwC — Data Engineer, MS Fabric/PySpark/SQL | company-pwc/ | make company-pwc ROLE="DataEngineer_MSFabric" |
+| Swiggy — Analyst, Trust & Safety | company/company-swiggy/ | make company/company-swiggy ROLE="Analyst_TrustSafety" |
+| Honeywell | company/company-honeywell/ | make company/company-honeywell |
+| NetApp | company/company-netapp/ | make company/company-netapp |
+| Norstella — Analyst I, Classifications | company/company-norstella/ | make company/company-norstella ROLE="Analyst_Classifications" |
+| PwC — Data Engineer, MS Fabric/PySpark/SQL | company/company-pwc/ | make company/company-pwc ROLE="DataEngineer_MSFabric" |
 
 ---
 
@@ -367,7 +367,7 @@ This repository contains several supporting documents. Here is what each one cov
 The main project documentation. Covers:
 
 - Requirements (Docker, make).
-- Full repository structure and naming conventions (base-* vs company-*).
+- Full repository structure and naming conventions (base-* vs company/company-*).
 - Quick start commands.
 - Day-to-day editing workflow (edit, build, review, repeat).
 - How resume.tex is structured — the 8 sections and their order.

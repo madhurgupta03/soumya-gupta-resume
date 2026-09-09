@@ -4,8 +4,8 @@
 # Usage:
 #   make                                    # show help
 #   make list                               # list all profiles
-#   make <profile>                          # compile a profile
-#   make <profile> ROLE="My_Role_Label"     # compile with custom role label
+#   make <profile-id>                       # compile a profile
+#   make <profile-id> ROLE="My_Role_Label"  # compile with custom role label
 #   make all                                # compile every profile
 #   make build                              # (re)build the Docker image only
 #   make clean                              # remove all output PDFs
@@ -14,15 +14,15 @@
 # Examples:
 #   make base-data-analyst
 #   make base-data-engineer   ROLE="DataEngineer_v2"
-#   make company-swiggy       ROLE="Analyst_TrustSafety"
+#   make company/company-swiggy ROLE="Analyst_TrustSafety"
 # -------------------------------------------------------
 
 SHELL      := /bin/bash
 ROLE       ?=
 IMAGE_NAME := resume-builder
 
-# Auto-discover all profile folders
-PROFILES := $(patsubst ./%,%,$(shell find . -maxdepth 1 -type d \( -name 'base-*' -o -name 'company-*' \) | sort))
+# Auto-discover root base-* profiles and nested company/company-* profiles.
+PROFILES := $(patsubst ./%,%,$(shell (find . -maxdepth 1 -type d -name 'base-*'; find ./company -mindepth 1 -maxdepth 1 -type d -name 'company-*' 2>/dev/null) | sort))
 
 # ── Default target ────────────────────────────────────
 .DEFAULT_GOAL := help
@@ -35,8 +35,8 @@ help:
 	@echo "  Resume Builder — Makefile"
 	@echo ""
 	@echo "  Usage:"
-	@echo "    make <profile>                       compile a profile"
-	@echo "    make <profile> ROLE=\"Label\"          compile with custom role label"
+	@echo "    make <profile-id>                    compile a profile"
+	@echo "    make <profile-id> ROLE=\"Label\"       compile with custom role label"
 	@echo "    make all                             compile every profile"
 	@echo "    make list                            list available profiles"
 	@echo "    make build                           (re)build the Docker image"
@@ -48,7 +48,7 @@ help:
 	@echo ""
 	@echo "  Examples:"
 	@echo "    make base-data-analyst"
-	@echo "    make company-swiggy  ROLE=\"Analyst_TrustSafety\""
+	@echo "    make company/company-swiggy  ROLE=\"Analyst_TrustSafety\""
 	@echo ""
 
 # ── List profiles ─────────────────────────────────────
@@ -67,7 +67,7 @@ build:
 # ── Compile all profiles ──────────────────────────────
 all: $(PROFILES)
 
-# ── Pattern rule — matches any base-* or company-* ───
+# ── Profile rule — accepts root base-* and company/company-* IDs ─
 $(PROFILES):
 	@bash compile.sh "$@" "$(ROLE)"
 

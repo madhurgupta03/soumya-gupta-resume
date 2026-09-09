@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 # -------------------------------------------------------
 # compile.sh  (root)
-# Compiles any resume profile into output/<profile>/
+# Compiles any resume profile into output/<profile-id>/
 #
 # Usage:
-#   bash compile.sh <profile>             # profile name as role label
-#   bash compile.sh <profile> "RoleName" # custom role label
+#   bash compile.sh <profile-id>             # profile ID as role label
+#   bash compile.sh <profile-id> "RoleName"  # custom role label
 #
 # Examples:
 #   bash compile.sh base-data-analyst
-#   bash compile.sh company-swiggy "Analyst_TrustSafety"
+#   bash compile.sh company/company-swiggy "Analyst_TrustSafety"
 #
-# Available profiles are any folder matching base-* or company-*
+# Available profile IDs are root base-* or company/company-* folders.
 # -------------------------------------------------------
 set -euo pipefail
 
@@ -20,8 +20,8 @@ IMAGE_NAME="resume-builder"
 
 # ── Helpers ──────────────────────────────────────────
 list_profiles() {
-  for d in "$ROOT_DIR"/base-* "$ROOT_DIR"/company-*; do
-    [ -d "$d" ] && echo "  $(basename "$d")"
+  for d in "$ROOT_DIR"/base-* "$ROOT_DIR"/company/company-*; do
+    [ -d "$d" ] && echo "  ${d#"$ROOT_DIR"/}"
   done
 }
 
@@ -29,7 +29,7 @@ list_profiles() {
 PROFILE="${1:-}"
 
 if [[ -z "$PROFILE" ]]; then
-  echo "Usage: bash compile.sh <profile> [role]"
+  echo "Usage: bash compile.sh <profile-id> [role]"
   echo ""
   echo "Available profiles:"
   list_profiles
@@ -38,7 +38,7 @@ fi
 
 SOURCE_DIR="${ROOT_DIR}/${PROFILE}"
 
-if [[ ! -d "$SOURCE_DIR" ]]; then
+if [[ ! "$PROFILE" =~ ^base-[^/]+$ && ! "$PROFILE" =~ ^company/company-[^/]+$ ]] || [[ ! -d "$SOURCE_DIR" ]]; then
   echo "ERROR: Profile '${PROFILE}' not found."
   echo ""
   echo "Available profiles:"
@@ -51,7 +51,7 @@ if [[ ! -f "${SOURCE_DIR}/resume.tex" ]]; then
   exit 1
 fi
 
-ROLE="${2:-${PROFILE}}"
+ROLE="${2:-${PROFILE//\//_}}"
 DATESTAMP="$(date '+%Y%m%d')"
 TIMESTAMP="$(date '+%Y%m%d_%H%M%S')"
 OUTPUT_DIR="${ROOT_DIR}/output/${PROFILE}/${DATESTAMP}"

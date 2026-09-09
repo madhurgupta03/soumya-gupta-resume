@@ -55,10 +55,10 @@ These patterns get resumes flagged or auto-dismissed by 2026 recruiters and clas
 
 ### 0. Check for Existing Profile
 
-Before starting, derive the company name from the JD and check if `company-<name>/resume.tex` already exists.
+Before starting, derive the company name from the JD and check if `company/company-<name>/resume.tex` already exists.
 
 ```bash
-ls company-<name>/resume.tex 2>/dev/null
+ls company/company-<name>/resume.tex 2>/dev/null
 ```
 
 **If the file exists**, use the AskQuestion tool to ask the user:
@@ -106,11 +106,11 @@ Read the base profiles to pick the closest starting point:
 ### 3. Create Company Folder
 
 ```bash
-mkdir company-<name>
-cp <chosen-base>/resume.tex company-<name>/resume.tex
+mkdir company/company-<name>
+cp <chosen-base>/resume.tex company/company-<name>/resume.tex
 ```
 
-Use a short lowercase company name (e.g., `company-norstella`, `company-swiggy`).
+Use a short lowercase company name (e.g., `company/company-norstella`, `company/company-swiggy`).
 
 ### 4. Tailor resume.tex
 
@@ -187,7 +187,7 @@ If stuffing is detected (>3% density or any keyword appearing 5+ times), remove 
 ### 6. Compile and Verify
 
 ```bash
-make company-<name> ROLE="RoleTitle"
+make company/company-<name> ROLE="RoleTitle"
 ```
 
 The resume **must be exactly 1 page**. Check the compile log for "(1 page, ...)".
@@ -262,7 +262,7 @@ At the very end, always provide a final summary to the user in this exact table 
 |---|---|
 | Company | [Company name] |
 | Role | [Exact job title from JD] |
-| Profile Folder | `company-<name>/` |
+| Profile Folder | `company/company-<name>/` |
 | Headline | [The tagline used under the name] |
 | Summary Reframed For | [Top 3-4 Tier 1 keywords the summary was rewritten around] |
 | Skills Clusters | [Number of skill rows and their category names] |
@@ -272,8 +272,8 @@ At the very end, always provide a final summary to the user in this exact table 
 | 6-Second Scan | [Pass / Borderline / Fail] |
 | Voice / AI-tells | [Clean / Needs work — no em dashes, no AI filler] |
 | ATS Score | [X / 100 — one-line verdict] |
-| Output PDF | `output/company-<name>/<date>/SoumyaGupta_<ROLE>_<timestamp>.pdf` |
-| Compile Command | `make company-<name> ROLE="RoleTitle"` |
+| Output PDF | `output/company/company-<name>/<date>/SoumyaGupta_<ROLE>_<timestamp>.pdf` |
+| Compile Command | `make company/company-<name> ROLE="RoleTitle"` |
 
 ## Rules
 
