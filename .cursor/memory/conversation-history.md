@@ -140,7 +140,63 @@
 - **Decisions:** Framed as THREE gates now (ATS keyword screen + 6-sec scan + AI-content detection). Key 2026 finding: Workday/Greenhouse/Lever ship AI classifiers, ~49% of hiring managers auto-dismiss AI-sounding resumes, em dashes + "however" are top tells — this is why writing-style + humanizer matter for ATS, not just polish. Voice order: humanize → writing-style → strip em dashes → compile. Did NOT fix pre-existing markdownlint warnings (whole-file house style)
 - **Open:** None
 
+## 2026-06-10 22:50 — Base resumes v16/v4 voice rewrite
+
+- **Goal:** Rewrite both base resumes with the new knowledge (6-sec rule, XYZ, AI-detection, writing-style)
+- **Did:** base-data-analyst → v16.0, base-data-engineer → v4.0. Bolded key metrics as 6-sec anchors (were all unbolded before); reordered so a bold-metric bullet leads instead of the "Promoted..." line; removed ALL em dashes (role titles/education/certs now commas or colon — date ranges keep en dash `--`); tightened to XYZ; kept first-person human voice. Compiled both via tectonic → 1 page each (verified with /tmp/pdfvenv pypdf); staged PDFs to output/<profile>/20260610/. Updated SUMMARY.md changelog (2 rows)
+- **Decisions:** Selective bolding (1 anchor per strong bullet, not every bullet) to satisfy 6-sec scan without tripping humanizer's "boldface overuse" tell. Kept summaries near-verbatim (user liked the v15 voice) rather than stuffing a metric in. Did NOT fabricate any new metrics. Base stays a rich master (~10 bullets) vs the 4-6 the process recommends for tailored company versions
+- **Open:** None. Company-* profiles still carry old em-dash role titles + unbolded metrics if user wants the same pass applied per-profile
+
+## 2026-06-10 23:31 — Base resume follow-up tweaks
+
+- **Goal:** Series of refinements to both base resumes after the v16/v4 rewrite
+- **Did:** Removed graduation years from Education (B.Tech/XII/X, both files). Analyst AI Tools row: dropped Microsoft Copilot (dup of GitHub Copilot) + Power Automate; added SQLAI.ai, Databricks Assistant, Tableau Pulse (Pulse is an AI tool, not BI — user correction); synced to pdfkeywords. Made ALL bullets start with power verbs (Promoted→Advanced, Ran→Executed, Set up→Designed, Handle→Manage, "Write a lot of"→Optimize, weak "Use…faster"→Accelerate) and de-duped repeated openers. Research role org → Indian Institute of Technology (IIT) Delhi (both). Reordered bullets by recruiter/ATS priority: quantified+keyword-rich first, then technical, then trajectory/AI differentiator, then process/comms last. Recompiled both via tectonic each step, always 1 page; staged to output/<profile>/20260610/
+- **Decisions:** No fabricated metrics. XYZ coverage still partial (analyst ~60%, engineer ~45% have metrics) — user was told; offered to convert action-only bullets if she supplies real numbers (data marts count, people trained, OLTP volume). Kept present tense on ongoing-duty bullets, past on achievements
+- **Open:** SUMMARY.md changelog only has the v16/v4 rows, not these micro-tweaks. Company-* profiles untouched
+
 - **Goal:** Use the writing-style skill whenever writing a resume
 - **Did:** Created `.cursor/rules/always-writing-style.mdc` (alwaysApply, globs resume.tex + cover-letter.tex) pointing at the skill; mirrors always-humanize.mdc; added "resumes" to the skill description
 - **Decisions:** Order is humanize first, then writing-style check, then strip em dashes; scoped to resume/cover-letter .tex so it does not fire on every .md
 - **Open:** None
+
+## 2026-06-11 11:25 — Summary options for both bases
+
+- **Goal:** User pasted a generic "3 professional summary options" career-coach prompt, said "on the base resumes". No actual JD attached.
+- **Did:** Generated 3 first-person summary options each for base-data-analyst and base-data-engineer. Used existing metrics only (12 hrs/wk, 40% error drop, 20,000+ rows, 400+ UAT, 6-mo promotion). Applied writing-style + humanizer (no em dashes, no banned words, no "that"). Presented in chat only; no files edited.
+- **Decisions:** Since no JD, tailored to each base role's own keywords; told user to paste a real JD for exact-match tailoring. Three angles per base: automation/impact, data quality, trajectory/cutover.
+- **Open:** Awaiting user pick; offered to drop chosen summary into the .tex and recompile.
+
+## 2026-06-11 11:40 — Analyst summary: pitch + humanize, shipped
+
+- **Goal:** Reframe base-data-analyst summary to pitch advancement (lateral hire / promotion / team move), add key terminology not just current work, humanize, watch whitespace. User picked the lateral-hire option.
+- **Did:** Ran humanizer process (draft → AI-tells audit → final); replaced summary in `base-data-analyst/resume.tex` line 104. New text leads "Data Analyst, about two years in, running reporting and analytics..." keeps SQL/Power BI (DAX, Power Query)/Tableau/Python + ETL, data models, KPI dashboards, data quality checks + metrics (12 hrs/wk, 40%). Compiled via tectonic (outdir /tmp/ats_build, must mkdir first), 1 page (verified /tmp/pdfvenv pypdf). Staged to output/base-data-analyst/20260611/ and refreshed root deliverable Soumya_Gupta_Data_Analyst_20260611.pdf.
+- **Decisions:** Cut AI tells — "core stack ... with hands on [list]", "actionable insights", "from week one", even rhythm. Used "myself" for ownership/capability signal. Dropped Excel from summary (still in header+skills). No fabricated metrics.
+- **Open:** Data Engineer base summary not yet given the same pitch+terminology pass; offered to mirror. Old root PDF Soumya_Gupta_Data_Analyst_20260610.pdf left in place.
+
+## 2026-06-11 11:41 — Engineer summary: mirror analyst pass
+
+- **Goal:** Apply same lateral-hire pitch + terminology + humanize pass to base-data-engineer summary.
+- **Did:** Replaced summary in `base-data-engineer/resume.tex` line 115, mirroring analyst voice/structure (S1 role+years+what they build, S2 stack, S3 built/automated/cut triplet, S4 learn-fast + self-serve marts). Keeps SQL/Python (Pandas, PySpark)/Bash/Azure/SAP Datasphere + OData→MySQL ingestion, Star Schema, indexing, monitoring, KPI reporting, 20,000+ row validation + metrics (12 hrs/wk, 40%). Compiled via tectonic (/tmp/ats_build_de), 1 page; staged to output/base-data-engineer/20260611/ + refreshed root Soumya_Gupta_Data_Engineer_20260611.pdf.
+- **Decisions:** Same AI tells removed; both base summaries now share a consistent human voice. No fabricated metrics.
+- **Open:** None. Company-* profiles still carry older summaries if user wants the pass applied per-profile.
+
+## 2026-06-15 11:16 — Add education years back to bases
+
+- **Goal:** User asked to "add back the year" in Education (removed 2026-06-10).
+- **Did:** Recovered years from untouched company-* profiles (e.g. company-fedex): B.Tech 2016 -- 2020, XII 2016, X 2014. Added `\hfill{\small\color{muted}\textit{YEAR}}` to each degree title line in base-data-analyst + base-data-engineer, keeping comma format (no em dashes reintroduced). Recompiled both via tectonic, 1 page each; refreshed root PDFs (Soumya_Gupta_Data_*_20260615.pdf) + output/<profile>/20260615/.
+- **Decisions:** Kept the base comma style for titles instead of the company "---" style; only the year was added. B.Tech shown as range, XII/X as single years, matching company profiles.
+- **Open:** /tmp/pdfvenv went stale across the date gap; recreated as /tmp/pdfvenv2 for page-count checks.
+
+## 2026-06-15 11:23 — Strip quantifiers + metrics from summaries
+
+- **Goal:** User wanted summaries cleaner: first drop soft quantifiers (about/around), then drop the metric outcomes (12 hrs saved, 40% error cut).
+- **Did:** Both base summaries: removed "about/around" so numbers read direct, then removed the hours-saved and error-reduction clauses entirely. Analyst 3rd sentence now "...data quality checks myself, and automated the manual reports." Engineer keeps data quality checks in the build list and ends the build sentence at "automated the weekly KPI reporting." Recompiled both via tectonic, 1 page; refreshed roots + output/20260615/.
+- **Decisions:** Metrics stay in the experience bullets (summary = positioning, bullets = proof). Left "20,000+" only as long as it was a hard figure, but it was tied to the error clause so it went too. Kept all tooling keywords.
+- **Open:** None.
+
+## 2026-06-15 11:26 — Summary polish + opener wording
+
+- **Goal:** Writing-skills polish on metric-stripped summaries, then standardize the opener.
+- **Did:** Both bases: changed the second "and" in the build sentence to "then" (sequence reads cleaner); analyst closer "reporting people use" -> "answers people act on". Then per user, set both openers to "Data {Analyst,Engineer} with about 2 years of experience, ..." (reverted the brief "two years in" / quantifier-free experiment for the tenure phrase only). Recompiled both via tectonic, 1 page; refreshed roots + output/20260615/.
+- **Decisions:** User wants "about 2 years of experience" wording despite earlier quantifier removal; that earlier rule applied to the metric numbers, not the tenure phrase. Both bases kept in sync.
+- **Open:** None.

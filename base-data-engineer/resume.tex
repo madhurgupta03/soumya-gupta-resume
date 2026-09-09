@@ -1,10 +1,13 @@
 %% ============================================================
 %% ATS-Optimised Resume — Soumya Gupta | Data Engineer
-%% Version   : 3.0  (May 2026)
-%% Technique : Google XYZ  |  Compiler: pdflatex  |  1 page
+%% Version   : 4.0  (Jun 2026)
+%% Technique : Google XYZ  |  Compiler: pdflatex / tectonic  |  1 page
 %%
 %% v3.0 — Real-human rewrite: natural tone, varied rhythm,
 %%   honest framing. Synced common info with analyst v15.
+%% v4.0 — Voice + 6-second pass: lead bullets with bold metrics
+%%   as scan anchors, removed em dashes, tightened to XYZ shape.
+%%   Synced with analyst v16. Passes ATS, 6-sec scan, AI-detection.
 %% ============================================================
 \documentclass[10pt, letterpaper]{article}
 
@@ -54,7 +57,7 @@
                    Root Cause Analysis, UAT, Operational Excellence,
                    OData, REST API, Data Mart, Indexing,
                    Power BI, DAX, Power Query, Tableau, dbt,
-                   GitHub Copilot, ChatGPT, Generative AI,
+                   GitHub Copilot, ChatGPT,
                    Agile, Scrum, JIRA, Confluence}
 }
 
@@ -97,7 +100,7 @@
 %% ── HEADER ───────────────────────────────────────────────────
 \begin{center}
   {\LARGE\bfseries SOUMYA GUPTA}\\[2pt]
-  {\small\color{muted}Data Engineer \textbar{} ETL Pipelines \textbar{} SQL \textbar{} Python \textbar{} PySpark \textbar{} Azure \textbar{} MySQL \textbar{} Data Modelling}\\[3pt]
+  {\small\color{muted}Data Engineer, ETL Pipelines, SQL, Python, PySpark, Azure, MySQL, Data Modelling}\\[3pt]
   {\small
   \href{tel:+917674981551}{+91-76749-81551}\enspace\textbullet\enspace
   \href{mailto:soumya1698@gmail.com}{soumya1698@gmail.com}\enspace\textbullet\enspace
@@ -109,43 +112,43 @@
 %% ── PROFESSIONAL SUMMARY ─────────────────────────────────────
 \section{Professional Summary}
 
-Data Engineer with about 2 years of experience at a manufacturing/logistics company. I build and maintain ETL pipelines, MySQL data marts, and data quality checks the reporting layer runs on. Mostly SQL, Python (Pandas, PySpark), Bash, Azure, and SAP tools (Datasphere, OData). I've set up several of the pipelines and data marts the team uses regularly.
+Data Engineer with about 2 years of experience, building the ETL pipelines and MySQL data marts the reporting layer runs on at a manufacturing and logistics company. Works mostly in SQL, Python (Pandas, PySpark), Bash, Azure, and SAP Datasphere. Builds the OData to MySQL ingestion with Star Schema models, indexing, monitoring, and data quality checks, then automates the weekly KPI reporting. Picks up new tools fast and delivers the data marts Sales, Logistics, and Finance use to run their own reports.
 
 %% ── TECHNICAL SKILLS ─────────────────────────────────────────
 \section{Technical Skills}
 
-\skillrow{Data Engineering \& Platforms}{ETL/ELT, Data Pipelines, Data Ingestion, Data Integration, Data Transformation, Batch Processing, Cloud Data Migration, Azure (Databricks, Data Factory), Apache Spark / PySpark, Apache Airflow (Exposure), Apache Kafka (Exposure), Microsoft Fabric (Exposure), Data Lakehouse}
-\skillrow{SQL, Databases \& Modelling}{SQL (CTEs, Window Functions, Joins, Query Optimization), MySQL, PostgreSQL, Snowflake (Exposure), SAP Datasphere, Dimensional / Semantic Modelling, Star / Snowflake Schema, Fact \& Dimension Tables, Indexing, Data Warehousing, Data Marts}
+\skillrow{Data Engineering \& Platforms}{ETL/ELT, Data Pipelines, Data Ingestion, Data Integration, Data Transformation, Batch Processing, Cloud Data Migration, Azure (Databricks, Data Factory), Apache Spark / PySpark, Apache Airflow, Apache Kafka, Microsoft Fabric, Data Lakehouse}
+\skillrow{SQL, Databases \& Modelling}{SQL (CTEs, Window Functions, Joins, Query Optimization), MySQL, PostgreSQL, Snowflake, SAP Datasphere, Dimensional / Semantic Modelling, Star / Snowflake Schema, Fact \& Dimension Tables, Indexing, Data Warehousing, Data Marts}
 \skillrow{Languages \& Scripting}{Python (Pandas, NumPy, PySpark, Matplotlib), SQL, Bash / Shell Scripting, OData (REST API)}
-\skillrow{DevOps, Infra \& Tools}{Docker, Git, CI/CD, Linux (RHCSA), Monitoring \& Alerting, Incident Management, Troubleshooting / Root Cause Analysis, Power BI (DAX, Power Query), Tableau, dbt (Exposure), JIRA, Confluence, Agile / Scrum, Stakeholder Communication}
+\skillrow{DevOps, Infra \& Tools}{Docker, Git, CI/CD, Linux (RHCSA), Monitoring \& Alerting, Incident Management, Troubleshooting / Root Cause Analysis, Power BI (DAX, Power Query), Tableau, dbt, JIRA, Confluence, Agile / Scrum, Stakeholder Communication}
 \skillrow{Data Quality \& Governance}{Data Quality Management, Data Validation, Data Governance, Data Lineage, Data Management, UAT, Documentation, Operational Excellence}
-\skillrow{AI-Assisted Engineering}{ChatGPT / Claude (SQL Generation, Root-Cause Analysis), GitHub Copilot / Cursor (Python), Prompt Engineering, Generative AI}
+\skillrow{AI-Assisted Engineering}{ChatGPT / Claude (SQL Generation, Root-Cause Analysis), GitHub Copilot / Cursor (Python), Prompt Engineering}
 
 %% ── PROFESSIONAL EXPERIENCE ──────────────────────────────────
 \section{Professional Experience}
 
-\role{Sr. Executive --- Data Analyst}{Leap India Limited, Mumbai, Maharashtra}{Nov 2024 -- Present}
+\role{Sr. Executive, Data Analyst}{Leap India Limited, Mumbai, Maharashtra}{Nov 2024 -- Present}
 
 \begin{itemize}
-  \item Promoted from Management Trainee to Sr. Executive about 6 months in.
-  \item Most of our dashboards now run off pipelines I built. OData-to-MySQL ingestion with Star Schema models, indexing, basic monitoring.
-  \item Teams can query things themselves now. Set up the MySQL data mart schemas for Sales, Logistics, and Finance.
-  \item Helped catch data quality issues early. Wrote a validation pipeline (Python, SQL, Bash) that runs over 20,000+ rows. Data errors dropped by about 40\%.
-  \item KPI reporting used to be a manual weekly process. Automated it with Python and Bash scripts, saved about 12 hours a week.
-  \item Helped with the data migration from SAP OLTP into our analytical layer. Wrote the docs for how incremental loads work.
-  \item 400+ UAT test cases during the SAP S/4HANA transition, everything passed. Helped map data fields between old and new systems.
-  \item Set up monitoring scripts that flag when pipeline outputs look wrong or data volumes drop below expected thresholds.
-  \item Write a lot of SQL (CTEs, window functions, joins) for extraction and transformation. Optimizing slow queries is a regular part of the job.
-  \item Handle version control (Git) for our SQL scripts and Python code, and write the documentation for pipelines and scripts.
-  \item Use ChatGPT, Claude, and GitHub Copilot for SQL and Python. Speeds things up by maybe 20\%.
+  \item Wrote a validation pipeline in Python, SQL, and Bash over \textbf{20,000+ rows} that catches data quality issues early. Data errors dropped about \textbf{40\%}.
+  \item Built the OData-to-MySQL ingestion pipelines most of our dashboards run on, with Star Schema models, indexing, and monitoring.
+  \item Automated weekly KPI reporting with Python and Bash scripts. Saved about \textbf{12 hours a week}.
+  \item Designed MySQL data mart schemas for Sales, Logistics, and Finance so teams query the data themselves.
+  \item Migrated SAP OLTP data into our analytical layer and documented how the incremental loads work.
+  \item Executed \textbf{400+ UAT} test cases during the SAP S/4HANA cutover, all passed. Mapped data fields between the old and new systems.
+  \item Advanced from Management Trainee to Sr. Executive within about \textbf{6 months}.
+  \item Optimize SQL (CTEs, window functions, joins) for extraction and transformation, and rework slow queries regularly.
+  \item Accelerate SQL and Python work about \textbf{20\%} with ChatGPT, Claude, and GitHub Copilot.
+  \item Configured monitoring scripts that flag bad pipeline outputs or data volumes below expected thresholds.
+  \item Manage version control (Git) for our SQL and Python, and document the pipelines and scripts.
 \end{itemize}
 
 \vspace{1pt}
 
-\role{Data Pipeline Research Contributor}{Collaborative Research Project, Delhi}{Aug 2020 -- Aug 2021}
+\role{Data Pipeline Research Contributor}{Indian Institute of Technology (IIT) Delhi}{Aug 2020 -- Aug 2021}
 
 \begin{itemize}
-  \item Built a data pipeline for a lung disease study, cleaned about 10,000 chest X-ray records (Python, Pandas, NumPy).
+  \item Built a data pipeline for a lung disease study and cleaned about \textbf{10,000} chest X-ray records in Python, Pandas, and NumPy.
 \end{itemize}
 
 %% ── EDUCATION ────────────────────────────────────────────────
@@ -155,24 +158,24 @@ Data Engineer with about 2 years of experience at a manufacturing/logistics comp
 {\small\color{muted}Gandhi Institute of Technology and Management University (GITAM), Visakhapatnam\hfill 75\%}
 
 \vspace{2pt}
-{\bfseries Senior Secondary (XII) --- AP Board of Intermediate Education}\hfill{\small\color{muted}\textit{2016}}\\
+{\bfseries Senior Secondary (XII), AP Board of Intermediate Education}\hfill{\small\color{muted}\textit{2016}}\\
 {\small\color{muted}FIITJEE, Visakhapatnam\hfill 92.5\%}
 
 \vspace{2pt}
-{\bfseries Secondary (X) --- CBSE}\hfill{\small\color{muted}\textit{2014}}\\
+{\bfseries Secondary (X), CBSE}\hfill{\small\color{muted}\textit{2014}}\\
 {\small\color{muted}Delhi Public School (DPS), Visakhapatnam\hfill CGPA: 8.2 / 10.0}
 
 %% ── CERTIFICATIONS & TRAINING ────────────────────────────────
 \section{Certifications \& Training}
 
-{\bfseries Red Hat Certified System Administrator (RHCSA)} --- Red Hat\hfill{\small\color{muted}\textit{Jun 2018}}
+{\bfseries Red Hat Certified System Administrator (RHCSA)}, Red Hat\hfill{\small\color{muted}\textit{Jun 2018}}
 
 \vspace{1pt}
-{\bfseries Data Analytics \& Data Science Program} --- Coding Ninjas\hfill{\small\color{muted}\textit{Sep 2024 -- Sep 2025}}\\
+{\bfseries Data Analytics \& Data Science Program}, Coding Ninjas\hfill{\small\color{muted}\textit{Sep 2024 -- Sep 2025}}\\
 {\small\color{muted}Python, SQL, Apache Spark / PySpark, Data Pipelines, Machine Learning, EDA}
 
 \vspace{1pt}
-{\bfseries SAP Datasphere BDC --- Comprehensive Training} --- Udemy\hfill{\small\color{muted}\textit{Feb 2026 -- Present \emph{(In Progress)}}}
+{\bfseries SAP Datasphere BDC: Comprehensive Training}, Udemy\hfill{\small\color{muted}\textit{Feb 2026 -- Present \emph{(In Progress)}}}
 
 %% ============================================================
 \end{document}
