@@ -214,3 +214,10 @@
 - **Did:** Set `%% Revised : 09 Sep 2026` in both base-data-analyst and base-data-engineer resume.tex headers
 - **Decisions:** Left historical version notes (Jun dates) unchanged; only the Revised field moved to today
 - **Open:** None
+
+## 2026-10-08 05:23 — FedEx Senior DA update
+
+- **Goal:** Update existing company-fedex resume for Data Analyst- Senior RC782566 (T5, Bengaluru)
+- **Did:** Update & re-score path; headline→Data Analyst, Senior; summary + skills + 6 bullets for Senior JD phrases (decision-making, narratives, analytical expertise, QA accuracy/completeness/integrity); stripped em dashes; Docker `make company/company-fedex ROLE=DataAnalystSenior` → 1 page; SUMMARY variants/changelog; ATS ~83/100
+- **Decisions:** Kept honest ~2 yrs (not Senior 4–5); stayed in company-fedex (same company); Docker compile preferred over tectonic
+- **Open:** Experience gap is the main ceiling; Master's preferred unused
