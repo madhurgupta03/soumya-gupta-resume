@@ -221,3 +221,10 @@
 - **Did:** Update & re-score path; headline→Data Analyst, Senior; summary + skills + 6 bullets for Senior JD phrases (decision-making, narratives, analytical expertise, QA accuracy/completeness/integrity); stripped em dashes; Docker `make company/company-fedex ROLE=DataAnalystSenior` → 1 page; SUMMARY variants/changelog; ATS ~83/100
 - **Decisions:** Kept honest ~2 yrs (not Senior 4–5); stayed in company-fedex (same company); Docker compile preferred over tectonic
 - **Open:** Experience gap is the main ceiling; Master's preferred unused
+
+## 2026-10-08 05:26 — Commit push FedEx v2
+
+- **Goal:** Commit and push FedEx Senior DA updates
+- **Did:** Committed resume.tex + SUMMARY + conversation-history as 613087d; pushed to origin/main
+- **Decisions:** PDF left untracked (output/ gitignored)
+- **Open:** None
